@@ -1,11 +1,9 @@
-<header>
-  <app-side-nav></app-side-nav>
-</header>
+<body [class.login-page]="isLoginPage()">
+  <header [hidden]="isLoginPage()">
+    <app-side-nav></app-side-nav>
+  </header>
 
-<main>
-  <router-outlet></router-outlet>
-</main>
-
-<footer>
-  <app-footer></app-footer>
-</footer>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</body>

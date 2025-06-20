@@ -1,2 +1,78 @@
-<p>home works!</p>
-<a routerLink="/login">Voltar</a>
+<section class="home">
+  <div class="home-header">
+    <h1>Home</h1>
+  
+    <div class="notification-wrapper">
+      <button class="notify-btn" title="Notificações" (click)="toggleNotificacoes()">
+        <img src="https://cdn-icons-png.flaticon.com/512/3119/3119338.png" alt="Notificações" id="notifcacao-btn"/>
+      </button>
+    
+      <div class="notification-dropdown" [hidden]="!mostrarNotificacoes">
+        <h2 id="dropdown-title">Notificações (GET)</h2>
+      
+        @for (n of notificacoes; track n.nome) {
+          <div class="notification-item" 
+               [hidden]="notificacaoSelecionada !== null" 
+               (click)="selecionarNotificacao(n)">
+            <img class="avatar" [src]="n.foto" alt="Avatar" />
+            <div class="notification-text">
+              <strong>{{ n.nome }}</strong>
+              <p>{{ n.descricao }}</p>
+            </div>
+          </div>
+        }
+        
+        <div class="notificacao-detalhe" [hidden]="notificacaoSelecionada === null">
+          <h3>{{ notificacaoSelecionada?.titulo }}</h3>
+          <h4>{{ notificacaoSelecionada?.subtitulo }}</h4>
+          <p>{{ notificacaoSelecionada?.descricaoCompleta }}</p>
+        
+          <div class="foto-detalhe"></div>
+        
+          <div class="botoes-acoes">
+            <button class="btn-aprovar" (click)="aprovar()">Aprovar</button>
+            <button class="btn-reprovar" (click)="reprovar()">Reprovar</button>
+          </div>
+          <button class="btn-voltar" (click)="notificacaoSelecionada = null">← Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="hero">
+    <div class="hero-text">
+      <h1>SIME</h1>
+      <p>Transformando a manutenção escolar em algo simples, rápido e transparente.</p>
+      <a routerLink="/sobre" class="btn">Saiba Mais</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://cdn-icons-png.flaticon.com/512/4086/4086679.png" alt="Manutenção">
+    </div>
+  </div>
+
+  <div class="benefits">
+    <h2>O que o SIME oferece?</h2>
+    <div class="grid-benefits">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Relatórios">
+        <h3>Registro Rápido</h3>
+        <p>Registre qualquer problema em poucos cliques, direto da escola.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/483/483947.png" alt="Transparência">
+        <h3>Acompanhamento</h3>
+        <p>Acompanhe cada etapa da solicitação: novo, em andamento e concluído.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png" alt="Organização">
+        <h3>Organização</h3>
+        <p>Visualize demandas por setor, urgência e histórico.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Notificações">
+        <h3>Notificações</h3>
+        <p>Receba alertas em tempo real sobre o status das suas solicitações.</p>
+      </div>
+    </div>
+  </div>
+</section>

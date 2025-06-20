@@ -1,0 +1,42 @@
+.container {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: white;
+  max-width: 400px;
+  width: 100%;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+h1 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+p {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.links a {
+  display: inline-block;
+  margin: 10px 15px;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #005999;
+}
+
+.icon {
+  margin-right: 6px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}

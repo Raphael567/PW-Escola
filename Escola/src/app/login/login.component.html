@@ -1,10 +1,42 @@
-<form action="">
-  <input type="text" id="cod">
-  <input type="text" id="login">
-  <input type="password" id="senha">
+<div class="login-container">
+  <form (ngSubmit)="onSubmit()" class="login-form">
+    <h2>LOGIN</h2>
 
-  <button>Entrar</button>
-</form>
+    <div class="top-buttons">
+      <div class="dropdown">
+        <button type="button" class="btn-select" (click)="toggleDropdown()">
+          <span class="arrow">▼</span> {{ tipoUsuarioSelecionado || 'ENTRAR COMO' }}
+        </button>
+        
+        <ul *ngIf="dropdownAberto" class="dropdown-menu">
+          <li (click)="selecionarTipo('Aluno')">Aluno</li>
+          <li (click)="selecionarTipo('Gestor')">Gestor</li>
+          <li (click)="selecionarTipo('Escola')">Escola</li>
+        </ul>
+      </div>
+    </div>
 
-<p>Esqueci a senha</p>
-<p>NÃO POSSUI CONTA? CADASTRA-SE</p>
+    <div class="input-group">
+      <input type="text" id="cod" name="cod" [(ngModel)]="codigo" placeholder="CÓDIGO ETEC" required />
+
+      <i class="icon-cod"></i>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="login" name="login" [(ngModel)]="login" placeholder="USUÁRIO" required />
+      <i class="icon-user"></i>
+    </div>
+
+    <div class="input-group senha-group">
+      <input [type]="showSenha ? 'text' : 'password'" id="senha" name="senha" [(ngModel)]="senha" placeholder="SENHA" required />
+      <i class="icon-lock"></i>
+      <button type="button" class="btn-show" (click)="toggleSenha()" tabindex="-1">
+      </button>
+    </div>
+
+    <button type="submit" class="btn-submit">ENTRAR</button>
+
+    <p class="link-text">Esqueci a senha</p>
+    <p class="link-text small">NÃO POSSUI CONTA? CADASTRE-SE</p>
+  </form>
+</div>

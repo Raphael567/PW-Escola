@@ -8,5 +8,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './contato.component.css'
 })
 export class ContatoComponent {
-
+  
 }

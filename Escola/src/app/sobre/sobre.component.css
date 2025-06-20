@@ -1,0 +1,56 @@
+/* Cores base */
+:root {
+    --gray-dark: #757575;
+    --gray-light: #c3c3c3;
+    --white: #ffffff;
+    --background: #f7f7f7;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+  }
+  
+  .sobre-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--background);
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .sobre-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    color: var(--gray-dark);
+    text-align: justify;
+    line-height: 1.5;
+    text-indent: 2em; 
+    font-family: Arial, sans-serif;
+  }
+  
+  .sobre-card h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--gray-dark);
+    text-align: center;
+    color: #44A1A0;
+  }
+  
+  .sobre-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .sobre-card strong {
+    color: #44A1A0;
+  }
+  
